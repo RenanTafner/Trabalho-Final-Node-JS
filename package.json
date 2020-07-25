@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
+    "prestart": "next build", 
     "start": "node ./bin/www",
     "knex": "./node_modules/.bin/knex"
   },
