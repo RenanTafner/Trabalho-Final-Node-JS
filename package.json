@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "start": "./node_modules/.bin/nodemon --inspect=0.0.0.0:9229 ./bin/www",
+    "start": "node ./bin/www",
     "knex": "./node_modules/.bin/knex"
   },
   "dependencies": {
