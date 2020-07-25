@@ -39,7 +39,7 @@ module.exports = {
         if(todoList.length==0){
             return 0;
         }else{
-            return todo[0].id + 1;
+            return todoList[0].id + 1;
         }
     },
 
