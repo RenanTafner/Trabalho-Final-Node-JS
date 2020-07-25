@@ -1,0 +1,41 @@
+<h1>Todo Items</h1>
+
+<br></br>
+
+<h1>Insert Todo Items</h1>
+<div>
+<form action= "/todos/insert" method= "POST">
+Description:<input type= "text" name= "descriptionInsert"/>
+<br></br>
+Done:<input type="checkbox" name="doneInsert">
+<input type ="hidden" name = "idTodoListInsert" value = '{{idTodoList}}'/>
+<br></br>
+<button type= "submit" >Insert Todo</button>
+</form>
+</div>
+
+<br></br>
+
+<h1>Existing Todo Items</h1>
+{{#each todos}}
+        <div>
+            <form action ="/todos/update/"  method= "POST">
+            <p><b>Description:</b>: {{this.description}}</p>
+            <p><b>Done:</b>: 
+                {{#if this.done}}
+                Yes
+                {{else}}
+                No
+                {{/if}}
+             </p>
+             <input type ="hidden" name = "idTodo" value = '{{this.id}}'/>
+             <input type ="hidden" name = "idTodoList" value = '{{this.idTodoList}}'/>
+             <button type= "submit" >Edit Todo</button>
+            </form>
+            <form action="/todos/delete/" method="POST">
+            <input type ="hidden" name = "idTodo" value = '{{this.id}}'/>
+             <button type= "submit" >Delete Todo</button>
+            </form>
+            <br></br>
+        </div>
+{{/each}}

@@ -1,0 +1,10 @@
+<h1>Edit Todo List</h1>
+<div>
+<form action= "/todoLists/update/updateAction" method= "POST">
+Description:<input type= "text" name= "descriptionUpdate" value = '{{todoList.description}}'/>
+<input type ="hidden" name = "idUpdate" value = '{{todoList.id}}'/>
+<input type ="hidden" name = "userNameUpdate" value = '{{todoList.userName}}'/>
+<br></br>
+<button type= "submit" >Update Todo List</button>
+</form>
+</div>

@@ -1,0 +1,37 @@
+<h1>Todo Lists</h1>
+
+<br></br>
+
+<h1>Insert Todo List</h1>
+<div>
+<form action= "/todoLists/insert" method= "POST">
+Description:<input type= "text" name= "descriptionInsert"/>
+<br></br>
+<input type ="hidden" name = "userNameInsert" value = '{{userName}}'/>
+<br></br>
+<button type= "submit" >Insert Todo List</button>
+</form>
+</div>
+
+<br></br>
+
+<h1>Existing Todo Lists</h1>
+{{#each todoLists}}
+        <div>
+            <form action ="/todoLists/update/"  method= "POST">
+            <p><b>Description:</b>: {{this.description}}</p>
+             <input type ="hidden" name = "idTodoList" value = '{{this.id}}'/>
+            <input type ="hidden" name = "userName" value = '{{userName}}'/>
+             <button type= "submit" >Edit Todo List Description</button>
+            </form>
+            <form action="/todos/" method="POST">
+            <input type ="hidden" name = "idTodoListEdit" value = '{{this.id}}'/>
+             <button type= "submit" >Edit Todo List Items</button>
+            </form>
+            <form action="/todoLists/delete/" method="POST">
+            <input type ="hidden" name = "idTodoListDelete" value = '{{this.id}}'/>
+             <button type= "submit" >Delete Todo List</button>
+            </form>
+            <br></br>
+        </div>
+{{/each}}
